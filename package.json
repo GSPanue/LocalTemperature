@@ -6,12 +6,30 @@
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack/webpack.dev.config.js",
-    "build": "webpack -p --config ./webpack/webpack.prod.config.js",
+    "start": "webpack-dev-server --config ./webpack/webpack.dev.config.babel.js",
+    "build": "webpack -p --config ./webpack/webpack.prod.config.babel.js",
     "analyse": "webpack-bundle-analyzer --port 4200 ./dist/js/stats.json",
     "test": "jest --silent",
     "test:watch": "npm test -- --watch",
     "test:report": "npm test -- --coverage",
     "test:coveralls": "npm run test:report && cat ./coverage/lcov.info | coveralls"
+  },
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "coveralls": "^3.0.2",
+    "express": "^4.16.4",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.27.1",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   }
 }
