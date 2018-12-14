@@ -5,12 +5,14 @@
 A single-page application which shows the current local outdoor temperature using various APIs
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/GSPanue/local-temperature/blob/master/LICENSE.md)
+[![Build Status](https://travis-ci.com/GSPanue/local-temperature.svg?branch=develop)](https://travis-ci.com/GSPanue/local-temperature)
+[![Coverage Status](https://coveralls.io/repos/github/GSPanue/local-temperature/badge.svg?branch=develop)](https://coveralls.io/github/GSPanue/local-temperature?branch=develop)
 
 </div>
 
 ## Development
 
-1. Clone the repository: ``git clone https://github.com/GSPanue/LocalTemperature.git``
+1. Clone the repository: ``git clone https://github.com/GSPanue/local-temperature.git``
 2. Install the dependencies: ``npm install``
 3. Initialise the local server: ``npm run start``
 4. Go to: ``http://localhost:8080``
