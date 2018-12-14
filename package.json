@@ -1,0 +1,17 @@
+{
+  "name": "local-temperature",
+  "description": "A single-page application which shows the current local outdoor temperature using various APIs",
+  "author": "Gurdev S. Panue",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack/webpack.dev.config.js",
+    "build": "webpack -p --config ./webpack/webpack.prod.config.js",
+    "analyse": "webpack-bundle-analyzer --port 4200 ./dist/js/stats.json",
+    "test": "jest --silent",
+    "test:watch": "npm test -- --watch",
+    "test:report": "npm test -- --coverage",
+    "test:coveralls": "npm run test:report && cat ./coverage/lcov.info | coveralls"
+  }
+}
