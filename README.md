@@ -25,3 +25,15 @@ A single-page application which shows the current local outdoor temperature usin
 - Run tests related to changed files: ``npm run test:watch``
 - Generate a code coverage report: ``npm run test:report``
 - Generate a code coverage report for Coveralls: ``npm run test:coveralls``
+
+## Version
+
+0.0.0
+
+## Author
+
+Gurdev S. Panue
+
+## License
+
+Local Temperature is licensed under the [MIT License](https://github.com/GSPanue/local-temperature/blob/master/LICENSE).
