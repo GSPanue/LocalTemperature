@@ -11,8 +11,8 @@
     "analyse": "webpack-bundle-analyzer --port 4200 ./dist/js/stats.json",
     "test": "jest --silent",
     "test:watch": "npm test -- --watch",
-    "test:report": "npm test -- --coverage",
-    "test:coveralls": "npm run test:report && cat ./coverage/lcov.info | coveralls"
+    "test:coverage": "npm test -- --coverage",
+    "test:coveralls": "npm run test:coverage && cat ./coverage/lcov.info | coveralls"
   },
   "jest": {
     "setupFiles": [

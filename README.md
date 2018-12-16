@@ -23,7 +23,7 @@ A single-page application which shows the current local outdoor temperature usin
 - Analyse the bundle: ``npm run analyse``
 - Run all unit tests: ``npm run test``
 - Run tests related to changed files: ``npm run test:watch``
-- Generate a code coverage report: ``npm run test:report``
+- Generate a code coverage report: ``npm run test:coverage``
 - Generate a code coverage report for Coveralls: ``npm run test:coveralls``
 
 ## Version
