@@ -1,7 +1,12 @@
 import React from 'react';
 
+import { Wrapper } from './styles';
+import { Spinner } from '../../components/Icon';
+
 const Splash = () => (
-  <div>Splash</div>
+  <Wrapper>
+    <Spinner />
+  </Wrapper>
 );
 
 export default Splash;
