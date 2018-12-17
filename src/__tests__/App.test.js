@@ -20,10 +20,16 @@ describe('Component: App', () => {
     expect(wrapper.find('ThemeProvider')).toHaveLength(1);
   });
 
-  it('should render a Splash component', () => {
+  it('should render a Splash component when currentScreen is equal to splash', () => {
     const wrapper = shallow(<App {...minProps} />);
 
     expect(wrapper.find('Splash')).toHaveLength(1);
+  });
+
+  it('should render a div when currentScreen is not equal to splash', () => {
+    const wrapper = shallow(<App currentScreen="Home" />);
+
+    expect(wrapper.find('div')).toHaveLength(1);
   });
 
   it('should have props for currentScreen', () => {
