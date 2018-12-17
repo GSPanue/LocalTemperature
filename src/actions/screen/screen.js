@@ -2,9 +2,9 @@ import {
   CHANGE_SCREEN
 } from '../../constants';
 
-const changeScreen = (screen) => ({
+const changeScreen = (nextScreen) => ({
   type: CHANGE_SCREEN,
-  payload: screen
+  payload: nextScreen
 });
 
 export {
