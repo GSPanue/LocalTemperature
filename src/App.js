@@ -1,20 +1,24 @@
-import React, { Fragment } from 'react';
-import { Provider as ReduxProvider } from 'react-redux';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
-import store from './store';
 import { light } from './theme';
-
 import Splash from './screens/Splash';
 
-const App = () => (
-  <Fragment>
-    <ReduxProvider store={store}>
-      <ThemeProvider theme={light}>
-        <Splash />
-      </ThemeProvider>
-    </ReduxProvider>
-  </Fragment>
-);
+const propTypes = {
+  currentScreen: PropTypes.string.isRequired
+};
+
+const App = ({ currentScreen }) => {
+  const shouldShowSplashScreen = (currentScreen === 'splash');
+
+  return (
+    <ThemeProvider theme={light}>
+      {(shouldShowSplashScreen) ? <Splash /> : <div>Home</div>}
+    </ThemeProvider>
+  );
+};
+
+App.propTypes = propTypes;
 
 export default App;
