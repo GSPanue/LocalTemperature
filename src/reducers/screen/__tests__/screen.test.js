@@ -7,7 +7,7 @@ import reducer from '..';
 describe('Reducer: Screen', () => {
   it('should return the initial state', () => {
     const expectedState = {
-      screen: 'splash'
+      currentScreen: 'splash'
     };
 
     const actualState = reducer(undefined, {});
@@ -17,11 +17,11 @@ describe('Reducer: Screen', () => {
 
   it('should handle CHANGE_SCREEN', () => {
     const initialState = {
-      screen: 'splash'
+      currentScreen: 'splash'
     };
 
     const expectedState = {
-      screen: 'home'
+      currentScreen: 'home'
     };
 
     const actualState = reducer(initialState, {

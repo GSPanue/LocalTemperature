@@ -3,7 +3,7 @@ import {
 } from '../../constants';
 
 const initialState = {
-  screen: 'splash'
+  currentScreen: 'splash'
 };
 
 const screen = (state = initialState, action) => {
@@ -11,7 +11,7 @@ const screen = (state = initialState, action) => {
     case CHANGE_SCREEN:
       return {
         ...state,
-        screen: action.payload
+        currentScreen: action.payload
       };
 
     default:
