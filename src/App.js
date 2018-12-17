@@ -3,10 +3,12 @@ import { ThemeProvider } from 'styled-components';
 
 import { light } from './theme';
 
+import Splash from './screens/Splash';
+
 const App = () => (
   <Fragment>
     <ThemeProvider theme={light}>
-      <div>Hello world!</div>
+      <Splash />
     </ThemeProvider>
   </Fragment>
 );

@@ -22,9 +22,9 @@ describe('Component: App', () => {
     expect(wrapper.find('ThemeProvider')).toHaveLength(1);
   });
 
-  it('should render a div', () => {
+  it('should render a Splash component', () => {
     const wrapper = shallow(<App />);
 
-    expect(wrapper.find('div')).toHaveLength(1);
+    expect(wrapper.find('Splash')).toHaveLength(1);
   });
 });
