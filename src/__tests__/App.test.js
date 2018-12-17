@@ -16,6 +16,12 @@ describe('Component: App', () => {
     expect(wrapper.find('Fragment')).toHaveLength(1);
   });
 
+  it('should render a ReduxProvider component', () => {
+    const wrapper = shallow(<App />);
+
+    expect(wrapper.find('Provider')).toHaveLength(1);
+  });
+
   it('should render a ThemeProvider component', () => {
     const wrapper = shallow(<App />);
 
