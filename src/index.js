@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider, connect } from 'react-redux';
 
 import { changeScreen } from './actions';
-
 import store from './store';
 import App from './App';
 
