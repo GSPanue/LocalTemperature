@@ -6,15 +6,16 @@ import { light } from './theme';
 import Splash from './screens/Splash';
 
 const propTypes = {
-  currentScreen: PropTypes.string.isRequired
+  currentScreen: PropTypes.string.isRequired,
+  changeScreen: PropTypes.func.isRequired
 };
 
-const App = ({ currentScreen }) => {
+const App = ({ currentScreen, ...rest }) => {
   const shouldShowSplashScreen = (currentScreen === 'splash');
 
   return (
     <ThemeProvider theme={light}>
-      {(shouldShowSplashScreen) ? <Splash /> : <div>Home</div>}
+      {(shouldShowSplashScreen) ? <Splash {...rest} /> : <div>Home</div>}
     </ThemeProvider>
   );
 };

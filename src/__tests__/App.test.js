@@ -5,7 +5,8 @@ import App from '../App';
 
 describe('Component: App', () => {
   const minProps = {
-    currentScreen: 'splash'
+    currentScreen: 'splash',
+    changeScreen: () => {}
   };
 
   it('should render without crashing', () => {
@@ -27,14 +28,15 @@ describe('Component: App', () => {
   });
 
   it('should render a div when currentScreen is not equal to splash', () => {
-    const wrapper = shallow(<App currentScreen="Home" />);
+    const wrapper = shallow(<App {...minProps} currentScreen="Home" />);
 
     expect(wrapper.find('div')).toHaveLength(1);
   });
 
-  it('should have props for currentScreen', () => {
+  it('should have props for currentScreen and changeScreen', () => {
     const wrapper = mount(<App {...minProps} />);
 
     expect(wrapper.props().currentScreen).toBeDefined();
+    expect(wrapper.props().changeScreen).toBeDefined();
   });
 });
