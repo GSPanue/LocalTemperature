@@ -20,7 +20,7 @@ const light = {
     large: '18px'
   },
   spinner: {
-    color: palette.mirage,
+    primaryColor: palette.mirage,
     thickness: '4'
   }
 };

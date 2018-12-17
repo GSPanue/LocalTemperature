@@ -30,7 +30,7 @@ const StyledIconBase = styled(IconBase)`
 `;
 
 const StyledCircle = styled.circle`
-  stroke: ${({ strokeColor, theme }) => (strokeColor || theme.spinner.color)};
+  stroke: ${({ strokeColor, theme }) => (strokeColor || theme.spinner.primaryColor)};
   stroke-linecap: round;
   stroke-width: ${({ thickness, theme }) => (thickness || theme.spinner.thickness)};
   animation: ${dash} 1.5s ease-in-out infinite;
