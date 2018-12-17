@@ -6,7 +6,8 @@
     "comma-dangle": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "import/prefer-default-export": "off",
-    "arrow-parens": ["error", "always"]
+    "arrow-parens": ["error", "always"],
+    "object-curly-newline": ["error", { "ObjectPattern": { "minProperties": 6 } }]
   },
   "parserOptions": {
     "ecmaVersion": 6,
