@@ -8,6 +8,13 @@
     "import/prefer-default-export": "off",
     "arrow-parens": ["error", "always"]
   },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "env": {
     "browser": true,
     "jest": true,
