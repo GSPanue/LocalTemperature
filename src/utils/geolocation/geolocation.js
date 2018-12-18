@@ -21,9 +21,6 @@ const getCurrentPosition = () => {
   }));
 };
 
-const x = () => (2);
-
 export {
-  getCurrentPosition,
-  x
+  getCurrentPosition
 };
