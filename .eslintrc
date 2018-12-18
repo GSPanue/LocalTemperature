@@ -8,7 +8,8 @@
     "import/prefer-default-export": "off",
     "arrow-parens": ["error", "always"],
     "object-curly-newline": ["error", { "ObjectPattern": { "minProperties": 6 } }],
-    "brace-style": ["error", "stroustrup"]
+    "brace-style": ["error", "stroustrup"],
+    "import/export": "off"
   },
   "parserOptions": {
     "ecmaVersion": 6,
