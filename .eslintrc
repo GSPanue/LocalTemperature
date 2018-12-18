@@ -10,7 +10,9 @@
     "object-curly-newline": ["error", { "ObjectPattern": { "minProperties": 6 } }],
     "brace-style": ["error", "stroustrup"],
     "import/export": "off",
-    "import/named": "off"
+    "import/named": "off",
+    "max-len": ["warn", 120, 2, { "ignoreComments": true }],
+    "prefer-promise-reject-errors": "off"
   },
   "parserOptions": {
     "ecmaVersion": 6,
