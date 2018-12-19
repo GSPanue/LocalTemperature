@@ -35,7 +35,7 @@ describe('Utility: Geolocation', () => {
 
     it('should return an error message when geolocation is not supported', async () => {
       global.navigator.geolocation = undefined;
-      const error = 'Your browser is not supported';
+      const error = 'Browser not supported';
 
       await expect(getCurrentPosition()).rejects.toEqual(Error(error));
     });

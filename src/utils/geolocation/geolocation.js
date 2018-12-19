@@ -16,7 +16,7 @@ const getCurrentPosition = () => {
     // Geolocation isn't supported
     // Return rejected promise
     return (
-      reject(new Error('Your browser is not supported'))
+      reject(Object.assign(new Error('Browser not supported'), { code: 0 }))
     );
   }));
 };
