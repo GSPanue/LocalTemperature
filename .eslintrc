@@ -11,8 +11,7 @@
     "brace-style": ["error", "stroustrup"],
     "import/export": "off",
     "import/named": "off",
-    "max-len": ["warn", 120, 2, { "ignoreComments": true }],
-    "prefer-promise-reject-errors": "off"
+    "max-len": ["warn", 120, 2, { "ignoreComments": true }]
   },
   "parserOptions": {
     "ecmaVersion": 6,
