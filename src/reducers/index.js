@@ -2,12 +2,12 @@ import { combineReducers } from 'redux';
 
 import app from './app';
 import screen from './screen';
-import coordinates from './coordinates';
+import weather from './weather';
 
 const reducer = combineReducers({
   app,
   screen,
-  coordinates
+  weather
 });
 
 export default reducer;

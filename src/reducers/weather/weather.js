@@ -1,31 +1,32 @@
 import {
-  GET_COORDINATES_REQUEST,
-  GET_COORDINATES_SUCCESS,
-  GET_COORDINATES_FAILURE
+  GET_WEATHER_REQUEST,
+  GET_WEATHER_SUCCESS,
+  GET_WEATHER_FAILURE
 } from '../../constants';
 
 const initialState = {
-  currentCoordinates: null,
+  currentLocation: null,
+  currentTemperature: null,
   loading: false,
   error: null
 };
 
-const coordinates = (state = initialState, action) => {
+const weather = (state = initialState, action) => {
   switch (action.type) {
-    case GET_COORDINATES_REQUEST:
+    case GET_WEATHER_REQUEST:
       return {
         ...state,
         loading: true
       };
 
-    case GET_COORDINATES_SUCCESS:
+    case GET_WEATHER_SUCCESS:
       return {
         ...state,
         loading: false,
-        currentCoordinates: action.payload
+        ...action.payload
       };
 
-    case GET_COORDINATES_FAILURE:
+    case GET_WEATHER_FAILURE:
       return {
         ...state,
         loading: false,
@@ -37,4 +38,4 @@ const coordinates = (state = initialState, action) => {
   }
 };
 
-export default coordinates;
+export default weather;
