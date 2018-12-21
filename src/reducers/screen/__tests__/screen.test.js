@@ -12,7 +12,7 @@ describe('Reducer: Screen', () => {
 
     const actualState = reducer(undefined, {});
 
-    expect(expectedState).toEqual(actualState);
+    expect(actualState).toEqual(expectedState);
   });
 
   it('should handle CHANGE_SCREEN', () => {
@@ -29,6 +29,6 @@ describe('Reducer: Screen', () => {
       payload: 'home'
     });
 
-    expect(expectedState).toEqual(actualState);
+    expect(actualState).toEqual(expectedState);
   });
 });

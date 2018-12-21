@@ -8,6 +8,6 @@ describe('Reducer: App', () => {
 
     const actualState = reducer(undefined, {});
 
-    expect(expectedState).toEqual(actualState);
+    expect(actualState).toEqual(expectedState);
   });
 });
