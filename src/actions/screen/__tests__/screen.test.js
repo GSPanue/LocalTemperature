@@ -13,6 +13,6 @@ describe('Actions: Screen', () => {
 
     const actualAction = actions.changeScreen('home');
 
-    expect(expectedAction).toEqual(actualAction);
+    expect(actualAction).toEqual(expectedAction);
   });
 });
