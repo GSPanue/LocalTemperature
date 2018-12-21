@@ -8,7 +8,7 @@ const initialState = {
   currentLocation: null,
   currentTemperature: null,
   loading: false,
-  error: null
+  error: ''
 };
 
 const weather = (state = initialState, action) => {

@@ -12,7 +12,7 @@ describe('Reducer: Weather', () => {
       currentLocation: null,
       currentTemperature: null,
       loading: false,
-      error: null
+      error: ''
     };
 
     const actualState = reducer(undefined, {});
@@ -25,14 +25,14 @@ describe('Reducer: Weather', () => {
       currentLocation: null,
       currentTemperature: null,
       loading: false,
-      error: null
+      error: ''
     };
 
     const expectedState = {
       currentLocation: null,
       currentTemperature: null,
       loading: true,
-      error: null
+      error: ''
     };
 
     const actualState = reducer(initialState, {
@@ -52,13 +52,13 @@ describe('Reducer: Weather', () => {
       currentLocation: null,
       currentTemperature: null,
       loading: false,
-      error: null
+      error: ''
     };
 
     const expectedState = {
       ...payload,
       loading: false,
-      error: null
+      error: ''
     };
 
     const actualState = reducer(initialState, {
@@ -76,7 +76,7 @@ describe('Reducer: Weather', () => {
       currentLocation: null,
       currentTemperature: null,
       loading: false,
-      error: null
+      error: ''
     };
 
     const expectedState = {
