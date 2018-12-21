@@ -1,7 +1,7 @@
 import {
-  GET_COORDINATES_REQUEST,
-  GET_COORDINATES_SUCCESS,
-  GET_COORDINATES_FAILURE
+  GET_WEATHER_REQUEST,
+  GET_WEATHER_SUCCESS,
+  GET_WEATHER_FAILURE
 } from '../../../constants';
 
 import { getCurrentPosition, mockStore } from '../../../utils';
@@ -9,28 +9,28 @@ import * as actions from '..';
 
 jest.mock('../../../utils/geolocation');
 
-describe('Actions: Coordinates', () => {
-  describe('Action: getCoordinates', () => {
-    it('should dispatch GET_COORDINATES_REQUEST and GET_COORDINATES_FAILURE on failure', async () => {
+describe('Actions: Weather', () => {
+  describe('Action: getWeather', () => {
+    it('should dispatch GET_WEATHER_REQUEST and GET_WEATHER_FAILURE on failure', async () => {
       getCurrentPosition.mockImplementationOnce(() => (
         Promise.reject(new Error('error'))
       ));
 
       const store = mockStore();
-      await store.dispatch(actions.getCoordinates());
+      await store.dispatch(actions.getWeather());
       const dispatches = store.getActions();
 
       expect(dispatches[0]).toEqual({
-        type: GET_COORDINATES_REQUEST
+        type: GET_WEATHER_REQUEST
       });
 
       expect(dispatches[1]).toEqual({
-        type: GET_COORDINATES_FAILURE,
+        type: GET_WEATHER_FAILURE,
         error: 'error'
       });
     });
 
-    it('should dispatch GET_COORDINATES_REQUEST and GET_COORDINATES_SUCCESS on success', async () => {
+    it('should dispatch GET_WEATHER_REQUEST and GET_WEATHER_SUCCESS on success', async () => {
       const coords = {
         latitude: 1,
         longitude: 0
@@ -43,15 +43,15 @@ describe('Actions: Coordinates', () => {
       ));
 
       const store = mockStore();
-      await store.dispatch(actions.getCoordinates());
+      await store.dispatch(actions.getWeather());
       const dispatchedActions = store.getActions();
 
       expect(dispatchedActions[0]).toEqual({
-        type: GET_COORDINATES_REQUEST
+        type: GET_WEATHER_REQUEST
       });
 
       expect(dispatchedActions[1]).toEqual({
-        type: GET_COORDINATES_SUCCESS,
+        type: GET_WEATHER_SUCCESS,
         payload: coords
       });
     });

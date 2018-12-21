@@ -1,16 +1,16 @@
 import {
-  GET_COORDINATES_REQUEST,
-  GET_COORDINATES_SUCCESS,
-  GET_COORDINATES_FAILURE
+  GET_WEATHER_REQUEST,
+  GET_WEATHER_SUCCESS,
+  GET_WEATHER_FAILURE
 } from '../../constants';
 
 import { getCurrentPosition } from '../../utils';
 
-const getCoordinates = () => (
+const getWeather = () => (
   async (dispatch) => {
     // Initiate loading state
     dispatch({
-      type: GET_COORDINATES_REQUEST
+      type: GET_WEATHER_REQUEST
     });
 
     try {
@@ -19,7 +19,7 @@ const getCoordinates = () => (
 
       // Update currentCoordinates in reducer on success
       dispatch({
-        type: GET_COORDINATES_SUCCESS,
+        type: GET_WEATHER_SUCCESS,
         payload: {
           latitude, longitude
         }
@@ -28,7 +28,7 @@ const getCoordinates = () => (
     catch (error) {
       // Update error in reducer on failure
       dispatch({
-        type: GET_COORDINATES_FAILURE,
+        type: GET_WEATHER_FAILURE,
         error: error.message
       });
     }
@@ -36,5 +36,5 @@ const getCoordinates = () => (
 );
 
 export {
-  getCoordinates
+  getWeather
 };
