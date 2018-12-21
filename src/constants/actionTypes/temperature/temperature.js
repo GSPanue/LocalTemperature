@@ -1,5 +1,0 @@
-const ADD_TEMPERATURE = 'ADD_TEMPERATURE';
-
-export {
-  ADD_TEMPERATURE
-};
