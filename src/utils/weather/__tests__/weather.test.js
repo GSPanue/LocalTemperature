@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getWeatherData } from '..';
+import { getWeatherData, getErrorMessage } from '..';
 
 jest.mock('axios');
 
@@ -49,6 +49,39 @@ describe('Utility: Weather', () => {
 
       const result = await getWeatherData(1, { latitude: 1, longitude: 2 });
       expect(result).toBeObject();
+    });
+  });
+
+  describe('Function: getErrorMessage', () => {
+    it('should return "Geolocation is not supported by this browser."', () => {
+      const error = {
+        code: 0
+      };
+
+      const expectedMessage = 'Geolocation is not supported by this browser.';
+
+      expect(getErrorMessage(error)).toEqual(expectedMessage);
+    });
+
+    it('should return "This website requires geolocation to be enabled in order to work correctly."', () => {
+      const error = {
+        code: 1
+      };
+
+      const expectedMessage = 'This website requires geolocation to be enabled in order to work correctly.';
+
+      expect(getErrorMessage(error)).toEqual(expectedMessage);
+    });
+
+    it('should return "Something went wrong. Please refresh the page and try again."', () => {
+      const error = {
+        code: 2
+      };
+
+      const expectedMessage = 'Something went wrong. Please refresh the page and try again.';
+
+      expect(getErrorMessage(error)).toEqual(expectedMessage);
+      expect(getErrorMessage({})).toEqual(expectedMessage);
     });
   });
 });
