@@ -7,7 +7,6 @@ const getCurrentPosition = () => {
   return (new Promise((resolve, reject) => {
     if (geolocation) {
       // Geolocation is supported
-      // Return current position
       return (
         geolocation.getCurrentPosition(resolve, reject)
       );
