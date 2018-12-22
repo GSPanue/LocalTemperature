@@ -9,10 +9,10 @@ const initialState = {
 const screen = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_SCREEN:
-      return {
+      return ({
         ...state,
         currentScreen: action.payload
-      };
+      });
 
     default:
       return state;

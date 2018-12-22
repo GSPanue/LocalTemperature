@@ -14,27 +14,29 @@ const initialState = {
 const weather = (state = initialState, action) => {
   switch (action.type) {
     case GET_WEATHER_REQUEST:
-      return {
+      return ({
         ...state,
         loading: true
-      };
+      });
 
     case GET_WEATHER_SUCCESS:
-      return {
+      return ({
         ...state,
         loading: false,
         ...action.payload
-      };
+      });
 
     case GET_WEATHER_FAILURE:
-      return {
+      return ({
         ...state,
         loading: false,
         error: action.error
-      };
+      });
 
     default:
-      return state;
+      return (
+        state
+      );
   }
 };
 

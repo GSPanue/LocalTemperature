@@ -9,7 +9,9 @@ const getWeatherData = (apiKey, { latitude, longitude }) => {
 
   const url = (domain + parameters);
 
-  return axios.get(url);
+  return (
+    axios.get(url)
+  );
 };
 
 /**
@@ -25,13 +27,19 @@ const getFahrenheit = (temperature) => (
 const getErrorMessage = (error) => {
   switch (error.code) {
     case 0:
-      return 'Geolocation is not supported by this browser.';
+      return (
+        'Geolocation is not supported by this browser.'
+      );
 
     case 1:
-      return 'This website requires geolocation to be enabled in order to work correctly.';
+      return (
+        'This website requires geolocation to be enabled in order to work correctly.'
+      );
 
     default:
-      return 'Something went wrong. Please refresh the page and try again.';
+      return (
+        'Something went wrong. Please refresh the page and try again.'
+      );
   }
 };
 
