@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getWeatherData, getErrorMessage } from '..';
+import { getWeatherData, getFahrenheit, getErrorMessage } from '..';
 
 jest.mock('axios');
 
@@ -49,6 +49,18 @@ describe('Utility: Weather', () => {
 
       const result = await getWeatherData(1, { latitude: 1, longitude: 2 });
       expect(result).toBeObject();
+    });
+  });
+
+  describe('Function: getFahrenheit', () => {
+    it('should convert celsius to fahrenheit', () => {
+      expect(getFahrenheit(0)).toEqual(32);
+      expect(getFahrenheit(-10)).toEqual(14);
+      expect(getFahrenheit(32)).toEqual(89.6);
+    });
+
+    it('should return a number', () => {
+      expect(getFahrenheit(0)).toBeNumber();
     });
   });
 

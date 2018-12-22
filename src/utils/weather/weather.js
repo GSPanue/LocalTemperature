@@ -13,6 +13,13 @@ const getWeatherData = (apiKey, { latitude, longitude }) => {
 };
 
 /**
+ * getFahrenheit: Converts temperature in celsius to fahrenheit.
+ */
+const getFahrenheit = (temperature) => (
+  (temperature * (9 / 5)) + 32
+);
+
+/**
  * getErrorMessage: Returns an error message.
  */
 const getErrorMessage = (error) => {
@@ -30,5 +37,6 @@ const getErrorMessage = (error) => {
 
 export {
   getWeatherData,
+  getFahrenheit,
   getErrorMessage
 };
