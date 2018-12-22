@@ -46,8 +46,8 @@ describe('Reducer: Weather', () => {
     const payload = {
       currentLocation: 'location',
       currentTemperature: {
-        c: 'c',
-        f: 'f'
+        celsius: 'celsius',
+        fahrenheit: 'fahrenheit'
       }
     };
 

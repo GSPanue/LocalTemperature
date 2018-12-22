@@ -128,8 +128,8 @@ describe('Actions: Weather', () => {
         payload: {
           currentLocation: `${data.name}, ${data.sys.country}`,
           currentTemperature: {
-            c: data.main.temp,
-            f: data.main.temp
+            celsius: data.main.temp,
+            fahrenheit: data.main.temp
           }
         }
       });
