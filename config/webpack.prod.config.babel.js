@@ -38,5 +38,8 @@ module.exports = {
         source: false
       }
     })
-  ]
+  ],
+  performance: {
+    hints: false
+  }
 };

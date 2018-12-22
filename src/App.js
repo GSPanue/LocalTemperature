@@ -1,20 +1,41 @@
-import React, { Fragment } from 'react';
-import { Provider as ReduxProvider } from 'react-redux';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
-import store from './store';
 import { light } from './theme';
+import { Wrapper } from './styles';
 
-import Splash from './screens/Splash';
+import Loader from './components/Loader';
+import Temperature from './screens/Temperature';
 
-const App = () => (
-  <Fragment>
-    <ReduxProvider store={store}>
+const propTypes = {
+  complete: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
+  getWeather: PropTypes.func.isRequired
+};
+
+class App extends Component {
+  componentDidMount() {
+    const { getWeather } = this.props;
+
+    getWeather();
+  }
+
+  render() {
+    const { getWeather, ...rest } = this.props;
+
+    return (
       <ThemeProvider theme={light}>
-        <Splash />
+        <Wrapper>
+          <Loader {...rest}>
+            <Temperature />
+          </Loader>
+        </Wrapper>
       </ThemeProvider>
-    </ReduxProvider>
-  </Fragment>
-);
+    );
+  }
+}
+
+App.propTypes = propTypes;
 
 export default App;

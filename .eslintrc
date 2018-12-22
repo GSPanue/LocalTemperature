@@ -5,7 +5,20 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "comma-dangle": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "arrow-parens": ["error", "always"],
+    "object-curly-newline": ["error", { "ObjectPattern": { "minProperties": 6 } }],
+    "brace-style": ["error", "stroustrup"],
+    "import/export": "off",
+    "import/named": "off",
+    "max-len": ["warn", 120, 2, { "ignoreComments": true }]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "env": {
     "browser": true,
