@@ -45,7 +45,10 @@ describe('Reducer: Weather', () => {
   it('should handle GET_WEATHER_SUCCESS', () => {
     const payload = {
       currentLocation: 'location',
-      currentTemperature: 'temperature'
+      currentTemperature: {
+        c: 'c',
+        f: 'f'
+      }
     };
 
     const initialState = {
