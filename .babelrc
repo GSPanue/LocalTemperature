@@ -1,13 +1,13 @@
 {
   "presets": [
-    ["env", {
-      "targets": {
-        "node": "current"
-      }
-    }],
+    "env",
     "react"
   ],
   "plugins": [
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }],
     "transform-object-rest-spread"
   ]
 }
