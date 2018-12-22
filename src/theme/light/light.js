@@ -17,7 +17,9 @@ const light = {
     secondaryColor: palette.fiord,
     small: '10px',
     medium: '14px',
-    large: '18px'
+    large: '18px',
+    normal: 'normal',
+    bold: 'bold'
   },
   spinner: {
     primaryColor: palette.mirage,
