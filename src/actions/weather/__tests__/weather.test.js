@@ -4,19 +4,36 @@ import {
   GET_WEATHER_FAILURE
 } from '../../../constants';
 
-import { getCurrentPosition, mockStore } from '../../../utils';
+import {
+  getCurrentPosition,
+  getWeatherData,
+  getFahrenheit,
+  getErrorMessage,
+  mockStore
+} from '../../../utils';
+
 import * as actions from '..';
 
 jest.mock('../../../utils/geolocation');
+jest.mock('../../../utils/weather');
+
+getFahrenheit.mockImplementation((temperature) => (temperature));
+getErrorMessage.mockImplementation((error) => (error.message));
 
 describe('Actions: Weather', () => {
   describe('Action: getWeather', () => {
-    it('should dispatch GET_WEATHER_REQUEST and GET_WEATHER_FAILURE on failure', async () => {
+    it('should dispatch GET_WEATHER_REQUEST and GET_WEATHER_FAILURE on geolocation failure', async () => {
       getCurrentPosition.mockImplementationOnce(() => (
-        Promise.reject(new Error('error'))
+        Promise.reject(new Error('geolocation failure'))
       ));
 
-      const store = mockStore();
+      const initialState = {
+        app: {
+          apiKey: 1
+        }
+      };
+
+      const store = mockStore(initialState);
       await store.dispatch(actions.getWeather());
       const dispatches = store.getActions();
 
@@ -26,11 +43,11 @@ describe('Actions: Weather', () => {
 
       expect(dispatches[1]).toEqual({
         type: GET_WEATHER_FAILURE,
-        error: 'error'
+        error: 'geolocation failure'
       });
     });
 
-    it('should dispatch GET_WEATHER_REQUEST and GET_WEATHER_SUCCESS on success', async () => {
+    it('should dispatch GET_WEATHER_REQUEST and GET_WEATHER_FAILURE on get request failure', async () => {
       const coords = {
         latitude: 1,
         longitude: 0
@@ -42,7 +59,63 @@ describe('Actions: Weather', () => {
         })
       ));
 
-      const store = mockStore();
+      getWeatherData.mockImplementationOnce(() => (
+        Promise.reject(new Error('request failure'))
+      ));
+
+      const initialState = {
+        app: {
+          apiKey: 1
+        }
+      };
+
+      const store = mockStore(initialState);
+      await store.dispatch(actions.getWeather());
+      const dispatches = store.getActions();
+
+      expect(dispatches[0]).toEqual({
+        type: GET_WEATHER_REQUEST
+      });
+
+      expect(dispatches[1]).toEqual({
+        type: GET_WEATHER_FAILURE,
+        error: 'request failure'
+      });
+    });
+
+    it('should dispatch GET_WEATHER_REQUEST and GET_WEATHER_SUCCESS on request success', async () => {
+      const data = {
+        main: {
+          temp: 0
+        },
+        name: 'name',
+        sys: {
+          country: 'country'
+        }
+      };
+
+      getCurrentPosition.mockImplementationOnce(() => (
+        Promise.resolve({
+          coords: {
+            latitude: 1,
+            longitude: 0
+          }
+        })
+      ));
+
+      getWeatherData.mockImplementationOnce(() => (
+        Promise.resolve({
+          data
+        })
+      ));
+
+      const initialState = {
+        app: {
+          apiKey: 1
+        }
+      };
+
+      const store = mockStore(initialState);
       await store.dispatch(actions.getWeather());
       const dispatchedActions = store.getActions();
 
@@ -52,7 +125,13 @@ describe('Actions: Weather', () => {
 
       expect(dispatchedActions[1]).toEqual({
         type: GET_WEATHER_SUCCESS,
-        payload: coords
+        payload: {
+          currentLocation: `${data.name}, ${data.sys.country}`,
+          currentTemperature: {
+            c: data.main.temp,
+            f: data.main.temp
+          }
+        }
       });
     });
   });
