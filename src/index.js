@@ -2,17 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider, connect } from 'react-redux';
 
-import { changeScreen } from './actions';
+import { getWeather } from './actions';
+
 import store from './store';
 import App from './App';
 
-const mapStateToProps = (state) => ({
-  currentScreen: state.screen.currentScreen
+const mapStateToProps = (state) => {
+  const { weather } = state;
+
+  return ({
+    complete: !!(weather.currentLocation && weather.currentTemperature),
+    error: weather.error
+  });
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getWeather: () => dispatch(getWeather())
 });
 
-const mapDispatchToProps = {
-  changeScreen
-};
 
 const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
 

@@ -2,11 +2,13 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import App from '../App';
+import { Wrapper } from '../styles';
 
 describe('Component: App', () => {
   const minProps = {
-    currentScreen: 'splash',
-    changeScreen: () => {}
+    complete: false,
+    error: '',
+    getWeather: () => {}
   };
 
   it('should render without crashing', () => {
@@ -21,22 +23,56 @@ describe('Component: App', () => {
     expect(wrapper.find('ThemeProvider')).toHaveLength(1);
   });
 
-  it('should render a Splash component when currentScreen is equal to splash', () => {
+  it('should render a Wrapper component', () => {
     const wrapper = shallow(<App {...minProps} />);
 
-    expect(wrapper.find('Splash')).toHaveLength(1);
+    expect(wrapper.find(Wrapper)).toHaveLength(1);
   });
 
-  it('should render a div when currentScreen is not equal to splash', () => {
-    const wrapper = shallow(<App {...minProps} currentScreen="Home" />);
+  it('should render a Loader component', () => {
+    const wrapper = shallow(<App {...minProps} />);
 
-    expect(wrapper.find('div')).toHaveLength(1);
+    expect(wrapper.find('Loader')).toHaveLength(1);
   });
 
-  it('should have props for currentScreen and changeScreen', () => {
+  it('should render a Temperature component', () => {
+    const wrapper = shallow(<App {...minProps} />);
+
+    expect(wrapper.find('Temperature')).toHaveLength(1);
+  });
+
+  it('should have props for complete, error, and getWeather', () => {
     const wrapper = mount(<App {...minProps} />);
 
-    expect(wrapper.props().currentScreen).toBeDefined();
-    expect(wrapper.props().changeScreen).toBeDefined();
+    expect(wrapper.props().complete).toBeDefined();
+    expect(wrapper.props().error).toBeDefined();
+    expect(wrapper.props().getWeather).toBeDefined();
+  });
+
+  it('should pass complete and error as props to the Loader component', () => {
+    const wrapper = mount(<App {...minProps} />);
+
+    expect(wrapper.find('Loader').props().complete).toBeDefined();
+    expect(wrapper.find('Loader').props().error).toBeDefined();
+  });
+
+  it('should call componentDidMount on mount', () => {
+    const spy = jest.spyOn(App.prototype, 'componentDidMount');
+    shallow(<App {...minProps} />);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  describe('Method: componentDidMount', () => {
+    it('should call getWeather', () => {
+      const getWeather = jest.fn();
+      const wrapper = shallow(<App {...minProps} getWeather={getWeather} />);
+      const instance = wrapper.instance();
+
+      getWeather.mockClear();
+      instance.componentDidMount();
+
+      expect(getWeather).toHaveBeenCalledTimes(1);
+    });
   });
 });

@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import { light } from './theme';
-import Splash from './screens/Splash';
+import { Wrapper } from './styles';
+
+import Loader from './components/Loader';
+import Temperature from './screens/Temperature';
 
 const propTypes = {
-  currentScreen: PropTypes.string.isRequired,
-  changeScreen: PropTypes.func.isRequired
+  complete: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
+  getWeather: PropTypes.func.isRequired
 };
 
-const App = ({ currentScreen, ...rest }) => {
-  const shouldShowSplashScreen = (currentScreen === 'splash');
+class App extends Component {
+  componentDidMount() {
+    const { getWeather } = this.props;
 
-  return (
-    <ThemeProvider theme={light}>
-      {(shouldShowSplashScreen) ? <Splash {...rest} /> : <div>Home</div>}
-    </ThemeProvider>
-  );
-};
+    getWeather();
+  }
+
+  render() {
+    const { getWeather, ...rest } = this.props;
+
+    return (
+      <ThemeProvider theme={light}>
+        <Wrapper>
+          <Loader {...rest}>
+            <Temperature />
+          </Loader>
+        </Wrapper>
+      </ThemeProvider>
+    );
+  }
+}
 
 App.propTypes = propTypes;
 
