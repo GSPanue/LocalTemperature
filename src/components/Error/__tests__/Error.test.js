@@ -6,7 +6,7 @@ import { Wrapper } from '../styles';
 
 describe('Component: Error', () => {
   const minProps = {
-    children: <div />
+    error: 'error'
   };
 
   it('should render without crashing', () => {
@@ -21,15 +21,16 @@ describe('Component: Error', () => {
     expect(wrapper.find(Wrapper)).toHaveLength(1);
   });
 
-  it('should render children', () => {
+  it('should render error as text', () => {
     const wrapper = shallow(<Error {...minProps} />);
 
-    expect(wrapper.find('div')).toHaveLength(1);
+    expect(wrapper.text()).toEqual('error');
   });
 
-  it('should have props for children', () => {
+  it('should have props for message', () => {
     const wrapper = shallow(<Error {...minProps} />);
 
     expect(wrapper.props().children).toBeDefined();
+    expect(wrapper.props().children).toEqual('error');
   });
 });

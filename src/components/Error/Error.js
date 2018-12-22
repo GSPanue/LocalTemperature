@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { Wrapper } from './styles';
 
 const propTypes = {
-  children: PropTypes.element.isRequired
+  error: PropTypes.string.isRequired
 };
 
-const Error = ({ children }) => (
+const Error = ({ error }) => (
   <Wrapper>
-    {children}
+    {error}
   </Wrapper>
 );
 
