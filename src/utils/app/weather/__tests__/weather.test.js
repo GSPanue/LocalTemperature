@@ -6,9 +6,7 @@ jest.mock('axios');
 describe('Utility: Weather', () => {
   describe('Function: getWeatherData', () => {
     it('should call axios.get', () => {
-      const get = jest.fn(() => (
-        Promise.resolve({})
-      ));
+      const get = jest.fn();
 
       axios.get = get;
 
@@ -17,10 +15,8 @@ describe('Utility: Weather', () => {
       expect(get).toHaveBeenCalledTimes(1);
     });
 
-    it('should have the correct URL parameters', () => {
-      const get = jest.fn(() => (
-        Promise.resolve({})
-      ));
+    it('should pass the correct URL and parameters to axios.get', () => {
+      const get = jest.fn();
 
       axios.get = get;
 
@@ -28,14 +24,17 @@ describe('Utility: Weather', () => {
       const latitude = 1;
       const longitude = 2;
 
-      const domain = 'http://api.openweathermap.org/data/2.5/';
-      const parameters = `weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-
-      const url = (domain + parameters);
+      const domain = 'http://api.openweathermap.org/data/2.5/weather';
+      const params = {
+        lat: latitude,
+        lon: longitude,
+        units: 'metric',
+        appid: apiKey
+      };
 
       getWeatherData(apiKey, { latitude, longitude });
 
-      expect(get).toHaveBeenCalledWith(url);
+      expect(get).toHaveBeenCalledWith(domain, { params });
     });
 
     it('should return an object', async () => {
