@@ -3,11 +3,11 @@ import axios from 'axios';
 /**
  * getWeatherData: Returns the current weather data.
  */
-const getWeatherData = (apiKey, { latitude, longitude }) => (
+const getWeatherData = (apiKey, { latitude: lat, longitude: lon }) => (
   axios.get('http://api.openweathermap.org/data/2.5/weather', {
     params: {
-      lat: latitude,
-      lon: longitude,
+      lat,
+      lon,
       units: 'metric',
       appid: apiKey
     }
