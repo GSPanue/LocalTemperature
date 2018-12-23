@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { mountWithTheme } from '../../../utils';
+import { mountWithTheme } from '../../../utils/test';
 
 import Loader from '..';
 

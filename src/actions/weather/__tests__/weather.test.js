@@ -8,14 +8,15 @@ import {
   getCurrentPosition,
   getWeatherData,
   getFahrenheit,
-  getErrorMessage,
-  mockStore
-} from '../../../utils';
+  getErrorMessage
+} from '../../../utils/app';
+
+import { mockStore } from '../../../utils/test';
 
 import * as actions from '..';
 
-jest.mock('../../../utils/geolocation');
-jest.mock('../../../utils/weather');
+jest.mock('../../../utils/app/geolocation');
+jest.mock('../../../utils/app/weather');
 
 getFahrenheit.mockImplementation((temperature) => (temperature));
 getErrorMessage.mockImplementation((error) => (error.message));

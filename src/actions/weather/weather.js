@@ -4,7 +4,12 @@ import {
   GET_WEATHER_FAILURE
 } from '../../constants';
 
-import { getCurrentPosition, getWeatherData, getFahrenheit, getErrorMessage } from '../../utils';
+import {
+  getCurrentPosition,
+  getWeatherData,
+  getFahrenheit,
+  getErrorMessage
+} from '../../utils/app';
 
 const getWeather = () => (
   async (dispatch, getState) => {
