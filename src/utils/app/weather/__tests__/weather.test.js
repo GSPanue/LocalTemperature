@@ -21,18 +21,18 @@ describe('Utility: Weather', () => {
       axios.get = get;
 
       const apiKey = 1;
-      const latitude = 1;
-      const longitude = 2;
+      const lat = 1;
+      const lon = 2;
 
       const domain = 'http://api.openweathermap.org/data/2.5/weather';
       const params = {
-        lat: latitude,
-        lon: longitude,
+        lat,
+        lon,
         units: 'metric',
         appid: apiKey
       };
 
-      getWeatherData(apiKey, { latitude, longitude });
+      getWeatherData(apiKey, { latitude: lat, longitude: lon });
 
       expect(get).toHaveBeenCalledWith(domain, { params });
     });
