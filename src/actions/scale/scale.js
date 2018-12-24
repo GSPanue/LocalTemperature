@@ -2,9 +2,9 @@ import {
   CHANGE_SCALE
 } from '../../constants';
 
-const changeScale = (scale) => ({
+const changeScale = (nextScale) => ({
   type: CHANGE_SCALE,
-  payload: scale
+  payload: nextScale
 });
 
 export {
