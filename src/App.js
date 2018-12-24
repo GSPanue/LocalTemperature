@@ -6,7 +6,7 @@ import { light } from './theme';
 import { Wrapper } from './styles';
 
 import Loader from './components/Loader';
-import Temperature from './screens/Temperature';
+import Main from './screens/Main';
 
 const propTypes = {
   complete: PropTypes.bool.isRequired,
@@ -28,7 +28,7 @@ class App extends Component {
       <ThemeProvider theme={light}>
         <Wrapper>
           <Loader {...rest}>
-            <Temperature />
+            <Main />
           </Loader>
         </Wrapper>
       </ThemeProvider>
