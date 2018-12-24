@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Wrapper } from './styles';
 
 const propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.arrayOf(PropTypes.element).isRequired
 };
 
 const Card = ({ children }) => (
