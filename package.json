@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --config ./config/webpack.dev.config.babel.js",
     "build": "webpack -p --config ./config/webpack.prod.config.babel.js",
     "analyse": "webpack-bundle-analyzer --port 4200 ./dist/js/stats.json",
-    "test": "jest --silent",
+    "test": "jest",
     "test:watch": "npm test -- --watch",
     "test:coverage": "npm test -- --coverage",
     "test:coveralls": "npm run test:coverage && cat ./coverage/lcov.info | coveralls"
