@@ -12,6 +12,9 @@ const palette = {
  * Light theme
  */
 const light = {
+  card: {
+    primaryBackground: palette.white
+  },
   text: {
     primaryColor: palette.mirage,
     secondaryColor: palette.fiord,
