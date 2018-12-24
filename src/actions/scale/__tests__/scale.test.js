@@ -4,7 +4,7 @@ import {
 
 import * as actions from '..';
 
-describe('Actions: Temperature', () => {
+describe('Actions: Scale', () => {
   describe('Action: changeScale', () => {
     it('should create an action to change the temperature scale', () => {
       const expectedAction = {
