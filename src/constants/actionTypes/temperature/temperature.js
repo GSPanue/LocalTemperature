@@ -1,0 +1,5 @@
+const CHANGE_SCALE = 'CHANGE_SCALE';
+
+export {
+  CHANGE_SCALE
+};
