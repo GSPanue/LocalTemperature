@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  font-size: 90px;
+  font-size: 80px;
   font-weight: 600;
 `;
 
