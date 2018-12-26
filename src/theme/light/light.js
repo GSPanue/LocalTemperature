@@ -15,14 +15,16 @@ const light = {
   card: {
     primaryBackground: palette.white
   },
+  heading: {
+    primaryColor: palette.mirage
+  },
+  subheading: {
+    primaryColor: palette.fiord
+  },
   text: {
-    primaryColor: palette.mirage,
-    secondaryColor: palette.fiord,
-    small: '10px',
-    medium: '14px',
-    large: '18px',
-    normal: 'normal',
-    bold: 'bold'
+    extraLarge: '80px',
+    large: '30px',
+    medium: '18px'
   },
   spinner: {
     primaryColor: palette.mirage,

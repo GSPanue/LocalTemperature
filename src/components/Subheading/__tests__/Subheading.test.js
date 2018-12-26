@@ -1,5 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
+
+import { mountWithTheme } from '../../../utils/test';
 
 import Subheading from '..';
 import { Wrapper } from '../styles';
@@ -28,7 +30,16 @@ describe('Component: Subheading', () => {
   });
 
   it('should have props for children', () => {
-    const wrapper = mount(<Subheading {...minProps} />);
+    const theme = {
+      subheading: {
+        primaryColor: 'red'
+      },
+      text: {
+        large: '30px'
+      }
+    };
+
+    const wrapper = mountWithTheme(<Subheading {...minProps} />, theme);
 
     expect(wrapper.props().children).toBeDefined();
   });

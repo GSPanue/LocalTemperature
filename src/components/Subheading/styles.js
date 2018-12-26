@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  font-size: 30px;
+  color: ${({ theme }) => (theme.subheading.primaryColor)};
+  font-size: ${({ theme }) => (theme.text.large)};
 `;
 
 export {

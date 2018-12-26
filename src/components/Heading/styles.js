@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  font-size: 80px;
-  font-weight: 600;
+  color: ${({ theme }) => (theme.heading.primaryColor)};
+  font-size: ${({ theme }) => (theme.text.extraLarge)};
+  font-weight: bold;
 `;
 
 export {

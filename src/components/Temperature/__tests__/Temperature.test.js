@@ -1,5 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
+
+import { mountWithTheme } from '../../../utils/test';
 
 import Temperature from '../Temperature';
 
@@ -29,7 +31,16 @@ describe('Component: Temperature', () => {
   });
 
   it('should render currentTemperature as text', () => {
-    const wrapper = mount(<Temperature {...minProps} />);
+    const theme = {
+      heading: {
+        primaryColor: 'red'
+      },
+      text: {
+        extraLarge: '80px'
+      }
+    };
+
+    const wrapper = mountWithTheme(<Temperature {...minProps} />, theme);
 
     expect(wrapper.text()).toEqual('temp');
   });
