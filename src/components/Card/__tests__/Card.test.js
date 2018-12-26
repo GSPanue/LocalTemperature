@@ -8,7 +8,7 @@ import { Wrapper } from '../styles';
 
 describe('Component: Card', () => {
   const minProps = {
-    children: <div />
+    children: [<div key={0} />]
   };
 
   it('should render without crashing', () => {
