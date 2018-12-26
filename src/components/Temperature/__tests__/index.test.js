@@ -1,4 +1,7 @@
+import { changeScale } from '../../../actions';
 import { mapStateToProps, mapDispatchToProps } from '..';
+
+jest.mock('../../../actions');
 
 describe('Index', () => {
   describe('Function: mapStateToProps', () => {
@@ -46,14 +49,9 @@ describe('Index', () => {
     });
 
     it('should call changeScale action', () => {
-      const { changeScale } = mapDispatchToProps(dispatch);
-
-      changeScale('celsius');
-
-      expect(dispatch.mock.calls[0][0]).toEqual({
-        type: 'CHANGE_SCALE',
-        payload: 'celsius'
-      });
+      expect(changeScale).toHaveBeenCalledTimes(0);
+      mapDispatchToProps(dispatch).changeScale();
+      expect(changeScale).toHaveBeenCalledTimes(1);
     });
   });
 });
