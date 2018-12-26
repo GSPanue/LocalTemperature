@@ -7,12 +7,12 @@ import { getWeather } from './actions';
 import store from './store';
 import App from './App';
 
-const mapStateToProps = (state) => {
-  const { weather } = state;
+const mapStateToProps = ({ weather }) => {
+  const { currentLocation, currentTemperature, error } = weather;
 
   return ({
-    complete: !!(weather.currentLocation && weather.currentTemperature),
-    error: weather.error
+    complete: !!(currentLocation && currentTemperature),
+    error
   });
 };
 
