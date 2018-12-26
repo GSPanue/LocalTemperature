@@ -20,7 +20,6 @@ export const mapDispatchToProps = (dispatch) => ({
   getWeather: () => dispatch(getWeather())
 });
 
-
 const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
 
 ReactDOM.render(
