@@ -31,7 +31,7 @@ describe('Index', () => {
       expect(mapStateToProps(state).complete).toBeFalse();
     });
 
-    it('should assign true to complete when currentLocation and currentTemperature are assigned a non-empty string', () => {
+    it('should assign true to complete when currentLocation and currentTemperature are assigned a value', () => {
       const nextState = {
         weather: {
           currentLocation: 'location',
