@@ -40,7 +40,7 @@ describe('Component: Button', () => {
     const wrapper = shallow(<Button {...minProps} onClick={onClick} />);
 
     expect(onClick).toHaveBeenCalledTimes(0);
-    wrapper.find(Wrapper).simulate('click');
+    wrapper.find(Wrapper).props().onClick();
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 });
