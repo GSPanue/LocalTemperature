@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import { light } from './theme';
-import { Wrapper } from './styles';
 
+import { Wrapper } from './styles';
 import Loader from './components/Loader';
 import Main from './screens/Main';
 
