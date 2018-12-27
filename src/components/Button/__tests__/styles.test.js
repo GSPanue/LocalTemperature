@@ -9,7 +9,6 @@ describe('Styles: Button', () => {
     it('should have the correct styles', () => {
       const wrapper = mount(<Wrapper />);
 
-      expect(wrapper).toHaveStyleRule('user-select', 'none');
       expect(wrapper).toHaveStyleRule('cursor', 'pointer');
     });
   });
