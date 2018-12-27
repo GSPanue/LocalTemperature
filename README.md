@@ -20,6 +20,27 @@ You can view the demo by clicking [here](https://local-temperature.firebaseapp.c
 - Displays a spinner whilst fetching data or waiting for the user to allow/block their location
 - Displays a different temperature scale (C°/F°) when the temperature is clicked on
 
+## Libraries
+
+- React
+- Redux
+- Styled Components
+- Axios
+- ESLint
+- Jest
+- Enzyme
+- Webpack
+
+## APIs
+
+- Geolocation
+- OpenWeatherMap
+
+## Tools
+
+- Travis CI
+- Coveralls
+
 ## Development
 
 1. Clone the repository: ``git clone https://github.com/GSPanue/local-temperature.git``
