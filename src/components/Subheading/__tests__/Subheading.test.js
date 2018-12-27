@@ -26,7 +26,7 @@ describe('Component: Subheading', () => {
   it('should render children as text', () => {
     const wrapper = shallow(<Subheading {...minProps} />);
 
-    expect(wrapper.text()).toEqual('text');
+    expect(wrapper.text()).toEqual(minProps.children);
   });
 
   it('should have props for children', () => {
@@ -41,6 +41,6 @@ describe('Component: Subheading', () => {
 
     const wrapper = mountWithTheme(<Subheading {...minProps} />, theme);
 
-    expect(wrapper.props().children).toBeDefined();
+    expect(wrapper.find('Subheading').props().children).toBeDefined();
   });
 });

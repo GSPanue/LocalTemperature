@@ -26,7 +26,7 @@ describe('Component: Heading', () => {
   it('should render children as text', () => {
     const wrapper = shallow(<Heading {...minProps} />);
 
-    expect(wrapper.text()).toEqual('text');
+    expect(wrapper.text()).toEqual(minProps.children);
   });
 
   it('should have props for children', () => {

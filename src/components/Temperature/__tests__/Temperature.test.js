@@ -42,7 +42,7 @@ describe('Component: Temperature', () => {
 
     const wrapper = mountWithTheme(<Temperature {...minProps} />, theme);
 
-    expect(wrapper.text()).toEqual('temp');
+    expect(wrapper.text()).toEqual(minProps.currentTemperature);
   });
 
   it('should have props for currentTemperature, currentScale, and changeScale', () => {
