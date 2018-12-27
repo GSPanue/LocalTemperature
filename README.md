@@ -10,6 +10,16 @@ A single-page application which shows the current local outdoor temperature usin
 
 </div>
 
+## Demo
+
+You can view the demo by clicking [here](https://local-temperature.firebaseapp.com).
+
+## Features
+
+- Displays the user's current location and temperature
+- Displays a spinner whilst fetching data or waiting for the user to allow/block their location
+- Displays a different temperature scale (C°/F°) when the temperature is clicked on
+
 ## Development
 
 1. Clone the repository: ``git clone https://github.com/GSPanue/local-temperature.git``
