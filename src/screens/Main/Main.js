@@ -1,13 +1,14 @@
 import React from 'react';
 
-import Card from '../../components/Card';
+import { StyledCard } from './styles';
+import Temperature from '../../components/Temperature';
+import Location from '../../components/Location';
 
 const Main = () => (
-  <Card>
-    <div>
-      Placeholder
-    </div>
-  </Card>
+  <StyledCard>
+    <Temperature />
+    <Location />
+  </StyledCard>
 );
 
 export default Main;

@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Main from '..';
+import { StyledCard } from '../styles';
 
 describe('Component: Main', () => {
   it('should render without crashing', () => {
@@ -10,15 +11,21 @@ describe('Component: Main', () => {
     expect(wrapper).toHaveLength(1);
   });
 
-  it('should render a div', () => {
+  it('should render a StyledCard component', () => {
     const wrapper = shallow(<Main />);
 
-    expect(wrapper.find('div')).toHaveLength(1);
+    expect(wrapper.find(StyledCard)).toHaveLength(1);
   });
 
-  it('should render a Card component', () => {
+  it('should render a Temperature component', () => {
     const wrapper = shallow(<Main />);
 
-    expect(wrapper.find('Card')).toHaveLength(1);
+    expect(wrapper.find('Connect(Temperature)')).toHaveLength(1);
+  });
+
+  it('should render a Location component', () => {
+    const wrapper = shallow(<Main />);
+
+    expect(wrapper.find('Connect(Location)')).toHaveLength(1);
   });
 });
