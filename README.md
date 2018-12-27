@@ -5,8 +5,8 @@
 A single-page application which shows the current local outdoor temperature using various APIs
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/GSPanue/local-temperature/blob/master/LICENSE.md)
-[![Build Status](https://travis-ci.com/GSPanue/local-temperature.svg?branch=develop)](https://travis-ci.com/GSPanue/local-temperature)
-[![Coverage Status](https://coveralls.io/repos/github/GSPanue/local-temperature/badge.svg?branch=develop)](https://coveralls.io/github/GSPanue/local-temperature?branch=develop)
+[![Build Status](https://travis-ci.com/GSPanue/local-temperature.svg?branch=master)](https://travis-ci.com/GSPanue/local-temperature)
+[![Coverage Status](https://coveralls.io/repos/github/GSPanue/local-temperature/badge.svg?branch=master)](https://coveralls.io/github/GSPanue/local-temperature?branch=master)
 
 </div>
 
