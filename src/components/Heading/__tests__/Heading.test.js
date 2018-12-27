@@ -41,6 +41,6 @@ describe('Component: Heading', () => {
 
     const wrapper = mountWithTheme(<Heading {...minProps} />, theme);
 
-    expect(wrapper.props().children).toBeDefined();
+    expect(wrapper.find('Heading').props().children).toBeDefined();
   });
 });
