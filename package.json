@@ -2,7 +2,7 @@
   "name": "local-temperature",
   "description": "A single-page application which shows the current local outdoor temperature using various APIs",
   "author": "Gurdev S. Panue",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {

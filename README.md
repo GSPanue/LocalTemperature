@@ -28,7 +28,7 @@ A single-page application which shows the current local outdoor temperature usin
 
 ## Version
 
-0.0.0
+1.0.0
 
 ## Author
 
