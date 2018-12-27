@@ -1,0 +1,63 @@
+{
+  "name": "local-temperature",
+  "description": "A single-page application which shows the current local outdoor temperature using various APIs",
+  "author": "Gurdev S. Panue",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./config/webpack.dev.config.babel.js",
+    "build": "webpack -p --config ./config/webpack.prod.config.babel.js",
+    "analyse": "webpack-bundle-analyzer --port 4200 ./dist/js/stats.json",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage",
+    "test:coveralls": "npm run test:coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/src/config/tests"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "setupTestFrameworkScriptFile": "jest-extended"
+  },
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "coveralls": "^3.0.2",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0",
+    "jest-extended": "^0.11.0",
+    "jest-styled-components": "^6.3.1",
+    "prop-types": "^15.6.2",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-mock-store": "^1.5.3",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.1.2",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.27.1",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}

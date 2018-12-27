@@ -1,0 +1,28 @@
+language: node_js
+
+node_js:
+  - stable
+
+install:
+  - npm install
+
+stages:
+  - build
+  - test
+  - report
+
+jobs:
+  include:
+    - stage: build
+      script: npm run build
+    - stage: test
+      script: npm run test
+    - stage: report
+      script: npm run test:coveralls
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email: false
