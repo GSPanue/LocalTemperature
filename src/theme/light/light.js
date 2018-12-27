@@ -3,8 +3,7 @@
  */
 const palette = {
   mirage: '#171c24',
-  fiord: '#3c4b62',
-  dodgerBlue: '#3880ff',
+  ghost: '#c2c7d1',
   white: '#ffffff'
 };
 
@@ -19,7 +18,7 @@ const light = {
     primaryColor: palette.mirage
   },
   subheading: {
-    primaryColor: palette.fiord
+    primaryColor: palette.ghost
   },
   text: {
     extraLarge: '80px',
