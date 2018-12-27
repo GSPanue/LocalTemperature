@@ -8,7 +8,8 @@ import { Wrapper } from '../styles';
 
 describe('Component: Card', () => {
   const minProps = {
-    children: [<div key={0} />]
+    children: [<div key={0} />],
+    className: 'class'
   };
 
   it('should render without crashing', () => {
@@ -29,7 +30,7 @@ describe('Component: Card', () => {
     expect(wrapper.find('div')).toHaveLength(1);
   });
 
-  it('should have props for children', () => {
+  it('should have props for children and className', () => {
     const theme = {
       card: {
         primaryBackground: 'red'
@@ -38,6 +39,7 @@ describe('Component: Card', () => {
 
     const wrapper = mountWithTheme(<Card {...minProps} />, theme);
 
-    expect(wrapper.props().children).toBeDefined();
+    expect(wrapper.find('Card').props().children).toBeDefined();
+    expect(wrapper.find('Card').props().className).toBeDefined();
   });
 });
