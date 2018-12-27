@@ -35,10 +35,10 @@ describe('Component: App', () => {
     expect(wrapper.find('Loader')).toHaveLength(1);
   });
 
-  it('should render a Temperature component', () => {
+  it('should render a Main component', () => {
     const wrapper = shallow(<App {...minProps} />);
 
-    expect(wrapper.find('Temperature')).toHaveLength(1);
+    expect(wrapper.find('Main')).toHaveLength(1);
   });
 
   it('should have props for complete, error, and getWeather', () => {

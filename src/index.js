@@ -7,19 +7,18 @@ import { getWeather } from './actions';
 import store from './store';
 import App from './App';
 
-const mapStateToProps = (state) => {
-  const { weather } = state;
+export const mapStateToProps = ({ weather }) => {
+  const { currentLocation, currentTemperature, error } = weather;
 
   return ({
-    complete: !!(weather.currentLocation && weather.currentTemperature),
-    error: weather.error
+    complete: !!(currentLocation && currentTemperature),
+    error
   });
 };
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   getWeather: () => dispatch(getWeather())
 });
-
 
 const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
 

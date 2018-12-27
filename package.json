@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --config ./config/webpack.dev.config.babel.js",
     "build": "webpack -p --config ./config/webpack.prod.config.babel.js",
     "analyse": "webpack-bundle-analyzer --port 4200 ./dist/js/stats.json",
-    "test": "jest --silent",
+    "test": "jest",
     "test:watch": "npm test -- --watch",
     "test:coverage": "npm test -- --coverage",
     "test:coveralls": "npm run test:coverage && cat ./coverage/lcov.info | coveralls"
@@ -47,6 +47,7 @@
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
     "jest-extended": "^0.11.0",
+    "jest-styled-components": "^6.3.1",
     "prop-types": "^15.6.2",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",

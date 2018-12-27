@@ -31,8 +31,8 @@ const getWeather = () => (
       // Format data before storing
       const currentLocation = `${name}, ${country}`;
       const currentTemperature = {
-        celsius: Math.round(temp),
-        fahrenheit: Math.round(getFahrenheit(temp))
+        celsius: `${Math.round(temp)}°C`,
+        fahrenheit: `${Math.round(getFahrenheit(temp))}°F`
       };
 
       // Update currentLocation and currentTemperature in reducer on success

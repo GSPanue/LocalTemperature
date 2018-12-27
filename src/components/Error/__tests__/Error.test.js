@@ -27,7 +27,7 @@ describe('Component: Error', () => {
   it('should render error as text when error is not empty', () => {
     const wrapper = shallow(<Error {...minProps} />);
 
-    expect(wrapper.text()).toEqual('error');
+    expect(wrapper.text()).toEqual(minProps.error);
   });
 
   it('should not render children when error is not empty', () => {

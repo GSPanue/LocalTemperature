@@ -129,8 +129,8 @@ describe('Actions: Weather', () => {
         payload: {
           currentLocation: `${data.name}, ${data.sys.country}`,
           currentTemperature: {
-            celsius: data.main.temp,
-            fahrenheit: data.main.temp
+            celsius: `${data.main.temp}°C`,
+            fahrenheit: `${data.main.temp}°F`
           }
         }
       });
