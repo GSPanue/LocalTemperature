@@ -24,7 +24,7 @@ describe('Utility: Weather', () => {
       const lat = 1;
       const lon = 2;
 
-      const domain = 'http://api.openweathermap.org/data/2.5/weather';
+      const domain = 'https://api.openweathermap.org/data/2.5/weather';
       const params = {
         lat,
         lon,

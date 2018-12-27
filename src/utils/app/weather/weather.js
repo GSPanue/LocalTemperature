@@ -4,7 +4,7 @@ import axios from 'axios';
  * getWeatherData: Returns the current weather data.
  */
 const getWeatherData = (apiKey, { latitude: lat, longitude: lon }) => (
-  axios.get('http://api.openweathermap.org/data/2.5/weather', {
+  axios.get('https://api.openweathermap.org/data/2.5/weather', {
     params: {
       lat,
       lon,
